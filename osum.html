@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Account Statement</title>
+
+    <script>
+    const isAuthenticated = sessionStorage.getItem('isAuthenticated');
+    if (!isAuthenticated) {
+        window.location.href = "login.html"; 
+    }
+</script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: left;
+            padding: 30px 0;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .statement-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .statement-title {
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .banner {
+            text-align: left;
+            margin: 20px 20px;
+        }
+
+        .banner img {
+            max-width: 40px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .balance-summary {
+            text-align: right;
+            margin: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="banner">
+            <img src="logo.jpeg" alt="Bank Statement Banner">
+        Osum Enterprises Unofficial Bank Statement
+    </header>
+
+    <div class="statement-container">
+        <div class="statement-title">
+            Detailed Statement - July & August 2024
+        </div>
+
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Post Date</th>
+                    <th>Description</th>
+                    <th>Cheque/Inst #</th>
+                    <th>Value Date</th>
+                    <th>Debit Amount</th>
+                    <th>Credit Amount</th>
+                    <th>Balance</th>
+                    <th>Initiated Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10 JUL 24</td>
+                    <td>ATM FUNDS TRANSFER</td>
+                    <td></td>
+                    <td>10 JUL 24</td>
+                    <td>0.00</td>
+                    <td>5,000.00</td>
+                    <td>5,000.00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10 JUL 24</td>
+                    <td>ATM FUNDS TRANSFER</td>
+                    <td></td>
+                    <td>10 JUL 24</td>
+                    <td>0.00</td>
+                    <td>10,000.00</td>
+                    <td>15,000.00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>23 JUL 24</td>
+                    <td>CHEQUE DEPOSITED</td>
+                    <td>23624116</td>
+                    <td>23 JUL 24</td>
+                    <td>0.00</td>
+                    <td>974,670.00</td>
+                    <td>989,670.00</td>
+                    <td>5644</td>
+                </tr>
+                <tr>
+                    <td>24 JUL 24</td>
+                    <td>CASH WITHDRAWAL</td>
+                    <td>55130526</td>
+                    <td>24 JUL 24</td>
+                    <td>233,500.00</td>
+                    <td>0.00</td>
+                    <td>756,170.00</td>
+                    <td>0489</td>
+                </tr>
+                <tr>
+                    <td>27 JUL 24</td>
+                    <td>CASH WITHDRAWAL</td>
+                    <td>55130527</td>
+                    <td>27 JUL 24</td>
+                    <td>150,000.00</td>
+                    <td>0.00</td>
+                    <td>606,170.00</td>
+                    <td>0106</td>
+                </tr>
+                <tr>
+                    <td>01 AUG 24</td>
+                    <td>INWARD CLEARING - DEBIT</td>
+                    <td>55130528</td>
+                    <td>01 AUG 24</td>
+                    <td>364,250.00</td>
+                    <td>0.00</td>
+                    <td>241,920.00</td>
+                    <td>5903</td>
+                </tr>
+                <tr>
+                    <td>09 AUG 24</td>
+                    <td>ATM FUNDS TRANSFER</td>
+                    <td></td>
+                    <td>09 AUG 24</td>
+                    <td>0.00</td>
+                    <td>10,000.00</td>
+                    <td>251,920.00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>09 AUG 24</td>
+                    <td>OUTWARD CHEQUE - DR</td>
+                    <td>55130529</td>
+                    <td>09 AUG 24</td>
+                    <td>250,000.00</td>
+                    <td>0.00</td>
+                    <td>1,920.00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>12 AUG 24</td>
+                    <td>FUNDS TRANSFER-IB-ALFA</td>
+                    <td></td>
+                    <td>12 AUG 24</td>
+                    <td>0.00</td>
+                    <td>250,000.00</td>
+                    <td>251,920.00</td>
+                    <td>0106</td>
+                </tr>
+                <tr>
+                    <td>13 AUG 24</td>
+                    <td>FUNDTRANSFER RAAST</td>
+                    <td></td>
+                    <td>13 AUG 24</td>
+                    <td>0.00</td>
+                    <td>250,000.00</td>
+                    <td>501,920.00</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="balance-summary">
+            Closing Balance: 501,920.00
+        </div>
+    </div>
+
+    <footer>
+        © 2024 Osum Enterprises - All Rights Reserved
+    </footer>
+
+</body>
+</html>
